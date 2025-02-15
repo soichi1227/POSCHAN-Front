@@ -8,8 +8,8 @@ export default function POSApp() {
   const [cart, setCart] = useState([]);
 
   const fetchProduct = async () => {
-    const res = await fetch(`http://127.0.0.1:8000/product/${code}`);
-    if (res.ok) {
+    const res = await fetch(`https://tech0-gen8-step4-pos-app-66.azurewebsites.net/product/${code}`);
+      if (res.ok) {
       const data = await res.json();
       setProduct(data);
     } else {
@@ -26,7 +26,7 @@ export default function POSApp() {
   };
 
   const purchase = async () => {
-    const res = await fetch("http://127.0.0.1:8000/purchase", {
+      const res = await fetch("https://tech0-gen8-step4-pos-app-66.azurewebsites.net/.net/api/purchase", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
